@@ -1,0 +1,13 @@
+.div {
+  background-color: rgb(19, 124, 27);
+  min-height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.botones {
+  color: white;
+  text-decoration: none;
+}

@@ -1,16 +1,16 @@
 const { DietTypes } = require("../db");
 const preDietsList = [
-  { name: "Gluten Free" },
-  { name: "Ketogenic" },
-  { name: "Vegetarian" },
-  { name: "Lacto-Vegetarian" },
-  { name: "Ovo-Vegetarian" },
-  { name: "Vegan" },
-  { name: "Pescetarian" },
-  { name: "Paleo" },
-  { name: "Primal" },
-  { name: "Low FODMAP" },
-  { name: "Whole30" },
+  { name: "gluten free" },
+  { name: "ketogenic" },
+  { name: "vegetarian" },
+  { name: "lacto-vegetarian" },
+  { name: "ovo-vegetarian" },
+  { name: "vegan" },
+  { name: "pescetarian" },
+  { name: "paleo" },
+  { name: "primal" },
+  { name: "low FODMAP" },
+  { name: "whole30" },
 ];
 
 const getDiets = async () => {

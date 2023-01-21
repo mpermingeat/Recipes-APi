@@ -12,11 +12,11 @@ module.exports = (sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      summaryDish: {
+      summary: {
         type: DataTypes.TEXT,
         allowNull: false,
       },

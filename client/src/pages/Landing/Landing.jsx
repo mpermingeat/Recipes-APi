@@ -4,9 +4,12 @@ import styles from "./Landing.module.css";
 function Landing() {
   return (
     <div className={styles.container}>
-      <h1>landing</h1>
+      <p className={styles.h1}>Welcome </p>
+      <p className={styles.h1}> to the </p>
+      <p className={styles.h1}> Food Api</p>
+
       <Link to="/home">
-        <button>Iniciar</button>
+        <button className={styles.button}>Start</button>
       </Link>
     </div>
   );

@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+@font-face {
+  font-family: "chalkboar like";
+  src: url("./assets/fonts/KGBlankSpaceSketch.ttf");
+}
+@font-face {
+  font-family: "chalkboar draw";
+  src: url("./assets/fonts/Bible\ Stories\ Personal\ Use.ttf");
+}

@@ -1,16 +1,6 @@
 .container {
   background-color: rgb(98, 159, 103);
   min-height: 100vh;
-}
-
-.form {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-}
-
-.div {
-  margin: 5px;
-  padding: 5px;
-  font-size: 16;
 }

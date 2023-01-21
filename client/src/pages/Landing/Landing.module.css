@@ -1,4 +1,21 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(98, 159, 103);
   min-height: 100vh;
+  font-family: "chalkboar like";
+}
+
+.h1 {
+  font-size: 60px;
+  color: rgb(250, 235, 215);
+}
+
+.button {
+  font-family: "chalkboar like";
+  background: none;
+  font-size: 60px;
+  color: rgb(250, 235, 215);
 }

@@ -4,19 +4,13 @@ const { apiKey } = process.env;
 const { default: axios } = require("axios");
 
 //crear recetas
-const createRecipe = async (
-  name,
-  summaryDish,
-  healthScore,
-  steps,
-  dietsTypes
-) => {
-  if (!name || !summaryDish) {
+const createRecipe = async (title, summary, healthScore, steps, dietsTypes) => {
+  if (!title || !summary) {
     throw Error("Faltan enviar datos obligatorios");
   }
   const newRecipe = await Recipe.create({
-    name,
-    summaryDish,
+    title,
+    summary,
     healthScore,
     steps,
   });
@@ -26,11 +20,11 @@ const createRecipe = async (
 };
 
 //traer recetas por nombre, request del search bar
-const getListByName = async (name) => {
+const getListByName = async (title) => {
   const listByName = await Recipe.findAll({
     where: {
-      name: {
-        [Op.iLike]: `%${name}%`,
+      title: {
+        [Op.iLike]: `%${title}%`,
       },
     },
     include: [
@@ -48,7 +42,7 @@ const getListByName = async (name) => {
   let listApi = getListApi.data.results;
   if (listApi.length !== 0) {
     listApi = listApi.filter(function (element) {
-      return element.title.toLowerCase().includes(name);
+      return element.title.toLowerCase().includes(title);
     });
   }
 

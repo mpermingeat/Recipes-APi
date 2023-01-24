@@ -1,0 +1,12 @@
+.elements {
+  margin-left: 3px;
+  background-color: rgba(255, 255, 255, 0.363);
+  border-radius: 5px;
+  font-family: "Cinzel-Regular";
+  color: #f6a454;
+  padding: 5px;
+  cursor: pointer;
+}
+.div {
+  margin-left: 3px;
+}

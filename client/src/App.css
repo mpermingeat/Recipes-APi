@@ -44,3 +44,15 @@
   font-family: "chalkboar draw";
   src: url("./assets/fonts/Bible\ Stories\ Personal\ Use.ttf");
 }
+@font-face {
+  font-family: "Cinzel-Bold";
+  src: url("./assets/fonts/Cinzel-Bold.otf");
+}
+@font-face {
+  font-family: "Cinzel-Regular";
+  src: url("./assets/fonts/Cinzel-Regular.otf");
+}
+@font-face {
+  font-family: "Signatie";
+  src: url("./assets/fonts/Signatie.ttf");
+}

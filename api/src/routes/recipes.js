@@ -33,10 +33,10 @@ recipesRoute.get("/", async (req, res) => {
   }
 });
 
-recipesRoute.get("/:id", async (req, res) => {
-  const { id } = req.params;
+recipesRoute.get("/:id/:dataBase", async (req, res) => {
+  const { id, dataBase } = req.params;
   try {
-    const recipeDetails = await getDetailsById(id);
+    const recipeDetails = await getDetailsById(id, dataBase);
     res.status(200).json(recipeDetails);
   } catch (error) {
     res.status(404).json({ error: error.message });

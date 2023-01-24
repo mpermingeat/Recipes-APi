@@ -1,5 +1,7 @@
 .container {
-  background-color: rgb(98, 159, 103);
+  background-image: url("../../assets/img/background-home-04.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   justify-content: center;

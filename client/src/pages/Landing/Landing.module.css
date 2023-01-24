@@ -6,16 +6,30 @@
   background-color: rgb(98, 159, 103);
   min-height: 100vh;
   font-family: "chalkboar like";
+  background-image: url(../../assets/img/background-03.png);
 }
 
 .h1 {
   font-size: 60px;
-  color: rgb(250, 235, 215);
+  color: #f6a454;
+  font-family: "Cinzel-Bold";
 }
 
 .button {
-  font-family: "chalkboar like";
+  font-family: "Signatie";
   background: none;
   font-size: 60px;
-  color: rgb(250, 235, 215);
+  color: #f6a454;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+.button:hover {
+  transform: scale(1.35);
+  cursor: pointer;
+}
+.border {
+  border: solid #f6a454 3px;
+  height: 95%;
+  width: 95%;
+  padding: 100px 0px;
 }

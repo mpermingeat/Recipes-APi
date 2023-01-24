@@ -1,4 +1,23 @@
-.container {
-  background-color: rgb(98, 159, 103);
+.div {
   min-height: 100vh;
+  background-image: url("../../assets/img/background-home-04.png");
+  color: #024a0d;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img {
+  margin-top: 5px;
+  border-radius: 20px;
+  border: solid #00620f 3px;
+  max-width: 450px;
+}
+.p {
+  width: 75%;
+}
+.steps {
+  width: 75%;
+  text-align: left;
 }

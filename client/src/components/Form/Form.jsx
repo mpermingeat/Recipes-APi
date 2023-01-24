@@ -58,9 +58,10 @@ function Form() {
             name="title"
             value={dataForm.title}
             onChange={hanbleInputChange}
+            required
           />
-          {errors.title ? <span>{errors.title}</span> : ""}
         </div>
+        {errors.title ? <span className={styles.p}>{errors.title}</span> : ""}
         <div className={styles.div}>
           <label className={styles.label} htmlFor="summary">
             Resumen:
@@ -71,9 +72,10 @@ function Form() {
             name="summary"
             value={dataForm.summary}
             onChange={hanbleInputChange}
+            required
           ></textarea>
-          {errors.summary ? <p className="danger">{errors.summary}</p> : ""}
         </div>
+        {errors.summary ? <p className={styles.p}>{errors.summary}</p> : ""}
         <div className={styles.div}>
           <label className={styles.label} htmlFor="healthScore">
             Health Score:{" "}
@@ -85,13 +87,14 @@ function Form() {
             name="healthScore"
             value={dataForm.healthScore}
             onChange={hanbleInputChange}
+            required
           />
-          {errors.healthScore ? (
-            <p className="danger">{errors.healthScore}</p>
-          ) : (
-            ""
-          )}
         </div>
+        {errors.healthScore ? (
+          <p className={styles.p}>{errors.healthScore}</p>
+        ) : (
+          ""
+        )}
         <div className={styles.div}>
           <label className={styles.label} htmlFor="steps">
             Steps:{" "}
@@ -103,13 +106,15 @@ function Form() {
             value={dataForm.steps}
             onChange={hanbleInputChange}
           ></textarea>
-          {errors.steps ? <p className="danger">{errors.steps}</p> : ""}
         </div>
-        <div className={styles.div}>
+        {errors.steps ? <p className={styles.p}>{errors.steps}</p> : ""}
+        <div className={styles.divDiets}>
           {diets.map((diet) => {
             return (
               <>
-                <label key={diet.name}>{diet.name}</label>
+                <label className={styles.label} key={diet.name}>
+                  {diet.name}
+                </label>
                 <input
                   type="checkbox"
                   name={diet.id}

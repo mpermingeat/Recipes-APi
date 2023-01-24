@@ -51,18 +51,39 @@ const getListByName = async (title) => {
   return allResults;
 };
 //traer por id, para el detail
-const getDetailsById = async (id) => {
-  const recipeDetail = await Recipe.findByPk(id, {
-    include: [
-      {
-        model: DietTypes,
-        through: {
-          attributes: [],
+const getDetailsById = async (idSearch, dataBase) => {
+  let recipeDetail = {};
+
+  if (dataBase === "true") {
+    recipeDetail = await Recipe.findByPk(id, {
+      include: [
+        {
+          model: DietTypes,
+          through: {
+            attributes: [],
+          },
         },
-      },
-    ],
-  });
+      ],
+    });
+  } else {
+    const response = await axios.get(
+      `https://api.spoonacular.com/recipes/${idSearch}/information?apiKey=${apiKey}`
+    );
+    const { id, title, summary, image, healthScore, diets, instructions } =
+      response.data;
+
+    recipeDetail = {
+      id,
+      title,
+      summary,
+      image,
+      healthScore,
+      diets,
+      instructions,
+    };
+  }
+
   return recipeDetail;
 };
-
+//
 module.exports = { createRecipe, getListByName, getDetailsById };

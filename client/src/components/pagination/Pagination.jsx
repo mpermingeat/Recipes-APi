@@ -8,7 +8,7 @@ function Pagination(props) {
   const recipes = useSelector((state) => state.recipes);
   const filterRecipes = useSelector((state) => state.filterRecipes);
   //-----calculamos las paginas necesarias en base a la cantidad de card----------//
-  const amount = 6;
+  const amount = 9;
   const totalPages = Math.ceil(recipes.length / amount);
   //-----------calculamos cuales son las q se muestran---------//
   const paginated = filterRecipes?.slice((page - 1) * amount, page * amount);
@@ -24,9 +24,13 @@ function Pagination(props) {
 
   return (
     <>
-      <div>
+      <div className={styles.div}>
         {indexButton.map((element) => (
-          <button onClick={handlePage} value={element}>
+          <button
+            className={styles.button}
+            onClick={handlePage}
+            value={element}
+          >
             {element}
           </button>
         ))}
@@ -35,13 +39,22 @@ function Pagination(props) {
         {paginated?.map((e) =>
           e.dataBase ? (
             <Card
-              key={`db${e.id}`}
+              key={e.id}
+              id={e.id}
+              dataBase={e.dataBase}
               name={e.title}
               image="https://via.placeholder.com/150"
               diets={e.dietTypes.map((e) => e.name)}
             />
           ) : (
-            <Card key={e.id} name={e.title} image={e.image} diets={e.diets} />
+            <Card
+              key={e.id}
+              id={e.id}
+              dataBase={false}
+              name={e.title}
+              image={e.image}
+              diets={e.diets}
+            />
           )
         )}
       </div>

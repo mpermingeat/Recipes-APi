@@ -1,14 +1,25 @@
 .div {
   background-color: rgb(19, 124, 27);
-  min-height: 5vh;
+  min-height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-left: 20%;
   padding-right: 20%;
+  background-image: url("../../assets/img/background-03.png");
+  font-family: "Cinzel-Bold";
+  color: #f6a454;
 }
 .botones {
-  color: white;
+  color: #f6a454;
   text-decoration: none;
-  font-family: "chalkboar like";
+  font-family: "Cinzel-Bold";
+  background-color: #f6a5543e;
+  padding: 7px 25px;
+  margin: 5px;
+  border-radius: 10px;
+}
+.botones:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 14px white;
 }

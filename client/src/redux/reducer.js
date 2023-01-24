@@ -96,6 +96,7 @@ export const reducer = (state = inicialState, { type, payload }) => {
     case RESET_FILTER: {
       return { ...state, filterRecipes: [...state.recipes] };
     }
+
     default:
       return { ...state };
   }

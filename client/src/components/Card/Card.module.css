@@ -2,17 +2,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 30%;
-  min-width: 60%;
-  height: 250px;
+  height: 150px;
+  width: 350px;
   border: 1px solid #ccc;
-  border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  margin: 10px 0;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #f6a454;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .food_card:hover {
   transform: scale(1.05);
   box-shadow: 2px 2px 10px #ccc;
+}
+.divImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 0px 0px 20px;
+  overflow: hidden;
+  border: solid #f6a454 1px;
 }
 .food_img {
   width: 40%;
@@ -29,25 +39,38 @@
   width: 60%;
   height: 100%;
   padding: 5px;
+  background-image: url("../../assets/img/background-03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 .food_info_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20%;
+  font-family: "Signatie";
+  font-size: 12px;
+  text-align: center;
+  margin-top: 22px;
 }
 .food_diets {
   height: 80%;
+  font-family: "Cinzel-Bold";
+  font-size: 10px;
 }
 .food_diets span {
+  font-size: 10px;
   display: inline;
-}
-.food_card h3 {
-  margin-top: 10px;
-  font-size: 16px;
-  text-align: center;
+  font-family: "Cinzel-Regular";
 }
 
-.food_card p {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.5;
+.separador {
+  position: relative;
+  margin-top: 9%;
+  margin-left: 10%;
+  width: 80%;
+}
+.link {
+  text-decoration: none;
 }

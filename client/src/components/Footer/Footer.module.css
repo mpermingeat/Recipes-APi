@@ -1,0 +1,27 @@
+.div {
+  background-image: url("../../assets/img/background-03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.text {
+  margin: 5px;
+  color: #f6a454;
+  font-family: "Cinzel-Bold";
+  font-size: 14px;
+}
+.firma {
+  margin: 5px;
+  font-family: "Signatie";
+  color: #f6a454;
+  font-size: 18px;
+}
+.span {
+  font-size: 10px;
+  margin: 5px;
+  color: #f6a454;
+  font-family: "Cinzel-Regular";
+}

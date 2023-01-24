@@ -6,6 +6,7 @@ import Pagination from "../../components/pagination/Pagination";
 import FilterDiets from "../../components/FilterDiets/FilterDiets";
 import OrderByName from "../../components/OrderByName/OrderByName";
 import OrderByScore from "../../components/OrderByScore/OrderByScore";
+import Footer from "../../components/Footer/Footer";
 
 //---------------------------------------------------------//
 function Home() {
@@ -19,15 +20,18 @@ function Home() {
 
   ///-------------------HTML--------------------------------//
   return (
-    <div className={styles.container}>
-      <div className={styles.options}>
-        <FilterDiets></FilterDiets>
-        <OrderByName></OrderByName>
-        <OrderByScore></OrderByScore>
-      </div>
+    <>
+      <div className={styles.container}>
+        <div className={styles.options}>
+          <FilterDiets></FilterDiets>
+          <OrderByName></OrderByName>
+          <OrderByScore></OrderByScore>
+        </div>
 
-      <Pagination></Pagination>
-    </div>
+        <Pagination></Pagination>
+      </div>
+      <Footer></Footer>
+    </>
   );
 }
 

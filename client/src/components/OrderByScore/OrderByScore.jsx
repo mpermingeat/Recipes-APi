@@ -10,7 +10,11 @@ function OrderByScore() {
   return (
     <div className={styles.div}>
       <label htmlFor="">Order by HealthScore:</label>
-      <select className={styles.elements} onChange={handleOrderScore}>
+      <select
+        id="myScore"
+        className={styles.elements}
+        onChange={handleOrderScore}
+      >
         <option hidden>Score</option>
         <option value="Ascendente">Asc</option>
         <option value="Descendente">Desc</option>

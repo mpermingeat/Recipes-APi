@@ -55,7 +55,7 @@ const getDetailsById = async (idSearch, dataBase) => {
   let recipeDetail = {};
 
   if (dataBase === "true") {
-    recipeDetail = await Recipe.findByPk(id, {
+    recipeDetail = await Recipe.findByPk(idSearch, {
       include: [
         {
           model: DietTypes,

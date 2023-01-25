@@ -13,6 +13,9 @@ function FilterDiets() {
   };
   //-----------------funcion para el resetfilter-------------///////
   const handleReset = () => {
+    document.getElementById("mySelect").value = "showAll";
+    document.getElementById("myOrder").value = "Order";
+    document.getElementById("myScore").value = "Score";
     dispatch(action.resetFilter());
   };
 
@@ -21,7 +24,7 @@ function FilterDiets() {
       <label className={styles.label} htmlFor="">
         Tipos de dietas:
       </label>
-      <select className={styles.elements} onChange={handleFilter}>
+      <select id="mySelect" className={styles.elements} onChange={handleFilter}>
         {diets.map((e, index) => (
           <option className={styles.option} key={index} value={e.name}>
             {e.name}

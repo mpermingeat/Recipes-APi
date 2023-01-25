@@ -10,7 +10,7 @@ function OrderByName() {
   return (
     <div className={styles.div}>
       <label htmlFor="">Order by: </label>
-      <select className={styles.select} onChange={handleOrder}>
+      <select id="myOrder" className={styles.select} onChange={handleOrder}>
         <option hidden>Order</option>
         <option value="Ascendente">Asc</option>
         <option value="Descendente">Desc</option>

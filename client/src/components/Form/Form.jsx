@@ -14,7 +14,7 @@ function Form() {
   });
   const [errors, setErrors] = useState({});
   const diets = useSelector((state) => state.diets);
-  // Manejador del submit del formulario
+  //-------------- Manejador del submit del formulario-------------------//
   const handleSubmit = (event) => {
     event.preventDefault();
     let err = Object.values(errors);
@@ -23,11 +23,18 @@ function Form() {
         .post("http://localhost:3001/recipes", dataForm)
         .then((res) => alert("todo bien"))
         .catch((error) => console.log(error.message));
+      setDataForm({
+        title: "",
+        summary: "",
+        healthScore: 0,
+        steps: "",
+        dietsTypes: [],
+      });
     } else {
       alert("Datos incorrectos");
     }
   };
-  // Manejador de los inputs para validar y setear errores
+  //------------- Manejador de los inputs para validar y setear errores----------//
   const hanbleInputChange = (event) => {
     let property = event.target.name;
     let value = event.target.value;

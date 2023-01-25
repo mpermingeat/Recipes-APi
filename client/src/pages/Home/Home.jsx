@@ -27,7 +27,6 @@ function Home() {
           <OrderByName></OrderByName>
           <OrderByScore></OrderByScore>
         </div>
-
         <Pagination></Pagination>
       </div>
       <Footer></Footer>

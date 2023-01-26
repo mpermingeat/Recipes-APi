@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(98, 159, 103);
+  min-height: 100vh;
+  font-family: "chalkboar like";
+  background-image: url("../../assets/img/background-home-04.png");
+}
+.border {
+  background-image: url("../../assets/img/verde.png");
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  margin-top: 10%;
+  color: #004613;
+  font-family: "Cinzel-Regular";
+  font-size: 120px;
+}

@@ -6,7 +6,7 @@
   border-radius: 8px;
   padding: 20px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  width: 60vw;
+  width: 70vw;
   height: auto;
   background-image: url("../../assets/img/background-03.png");
   background-size: cover;
@@ -32,6 +32,7 @@
   margin: 5px;
   border-radius: 10px;
   cursor: pointer;
+  border: #f6a454 solid 2px;
 }
 .submit:hover {
   box-shadow: 2px 2px 14px white;
@@ -39,11 +40,11 @@
 .label {
   display: block;
   font-size: 16px;
-
   margin-bottom: 10px;
   margin: 10px;
   color: #f6a454;
   font-family: "Cinzel-Bold";
+  font-size: 22px;
 }
 
 .input,
@@ -54,7 +55,7 @@
   box-sizing: border-box;
   border: 1px solid #f6a454;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 20px;
   background-color: rgba(255, 255, 255, 0.266);
   color: #f6a454;
 }
@@ -77,4 +78,5 @@ textarea:focus-visible {
 }
 .p {
   color: red;
+  font-size: 18px;
 }

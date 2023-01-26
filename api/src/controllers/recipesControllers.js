@@ -69,8 +69,16 @@ const getDetailsById = async (idSearch, dataBase) => {
     const response = await axios.get(
       `https://api.spoonacular.com/recipes/${idSearch}/information?apiKey=${apiKey}`
     );
-    const { id, title, summary, image, healthScore, diets, instructions } =
-      response.data;
+    const {
+      id,
+      title,
+      summary,
+      image,
+      healthScore,
+      diets,
+      instructions,
+      dishTypes,
+    } = response.data;
 
     recipeDetail = {
       id,
@@ -80,10 +88,14 @@ const getDetailsById = async (idSearch, dataBase) => {
       healthScore,
       diets,
       instructions,
+      dishTypes,
     };
   }
-
   return recipeDetail;
 };
+
+const deleteRecipe = async (id) => {
+  await Recipe.destroy({ where: { id: id } });
+};
 //
-module.exports = { createRecipe, getListByName, getDetailsById };
+module.exports = { createRecipe, getListByName, getDetailsById, deleteRecipe };

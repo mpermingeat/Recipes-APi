@@ -6,15 +6,16 @@
   color: #f6a454;
   padding: 5px;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .option {
   text-align: center;
-  background-color: rgba(#f6a55452);
-
+  background-color: #f6a55457;
   font-family: "Cinzel-Regular";
   color: #f6a454;
   padding: 5px;
+  font-size: 18px;
 }
 .option:hover {
   cursor: pointer;

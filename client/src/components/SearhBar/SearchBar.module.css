@@ -4,8 +4,14 @@
   font-family: "Cinzel-Bold";
   background-color: #f6a5543e;
   padding: 7px 25px;
-  margin: 5px;
+  margin-left: 5px;
   border-radius: 10px;
+  border: none;
+  font-size: 25px;
+}
+.button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 14px white;
 }
 .div {
   margin-left: 5px;
@@ -15,4 +21,5 @@
   padding: 5px;
   color: #f6a454;
   border-radius: 10px;
+  font-size: 22px;
 }

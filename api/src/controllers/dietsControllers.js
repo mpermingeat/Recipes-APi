@@ -10,7 +10,7 @@ const preDietsList = [
   { name: "paleo" },
   { name: "primal" },
   { name: "low FODMAP" },
-  { name: "whole30" },
+  { name: "whole 30" },
 ];
 
 const getDiets = async () => {

@@ -9,15 +9,126 @@
   align-items: center;
 }
 .img {
-  margin-top: 5px;
   border-radius: 20px;
-  border: solid #00620f 3px;
-  max-width: 450px;
+  border: solid #f6a454 1px;
+  max-width: 360px;
+  margin: 20px;
+  margin-left: 30px;
 }
 .p {
-  width: 75%;
+  width: 85%;
+  margin-top: 20px;
+  font-family: "Cinzel-Regular";
 }
 .steps {
-  width: 75%;
-  text-align: left;
+  width: 85%;
+  margin-top: 20px;
+  font-family: "Cinzel-Regular";
+}
+.header {
+  margin-top: 20px;
+  background-image: url("../../assets/img/background-03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f6a454;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  align-items: center;
+  width: 70vw;
+  max-height: 280px;
+  font-family: "Signatie";
+  border: solid #f6a454 3px;
+  margin-bottom: 20px;
+}
+.h1 {
+  margin-left: 5%;
+  max-width: 50%;
+}
+.summary {
+  background-image: url("../../assets/img/background-03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f6a454;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  padding: 2%;
+  width: 70vw;
+  text-align: justify;
+  font-family: "Cinzel-Bold";
+  border: solid #f6a454 3px;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.footer {
+  min-width: 100vw;
+}
+.divButtons {
+  background-image: url("../../assets/img/background-03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f6a454;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: solid #f6a454 3px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.buttons {
+  border: solid #f6a454 3px;
+  color: #f6a454;
+  padding: 20px 25px;
+  border-radius: 20px;
+  background-color: #f6a5545a;
+  margin: 15px 15px;
+  font-size: 22px;
+}
+
+.buttons:hover {
+  background-color: #f6a454;
+  color: rgb(1, 91, 1);
+}
+
+.tags {
+  background-image: url("../../assets/img/background-03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: hsl(30, 90%, 65%);
+  border-radius: 20px;
+  align-items: center;
+  padding: 2%;
+
+  text-align: justify;
+  font-family: "Cinzel-Bold";
+  border: solid #f6a454 3px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: rows;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.divTags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70vw;
+  gap: 15px;
+}
+
+.span {
+  background-color: #f6a55463;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 5px;
+  margin: 0px 5px;
+  text-align: center;
 }

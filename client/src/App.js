@@ -3,6 +3,7 @@ import "./App.css";
 import MyNavBar from "./components/MyNavBar/MyNavBar";
 import CreateRecipe from "./pages/CreateRecipe/CreateRecipe";
 import DetailRecipe from "./pages/DetailRecipe/DetailRecipe";
+import Error404 from "./pages/Error404/Error404";
 import Home from "./pages/Home/Home";
 import Landing from "./pages/Landing/Landing";
 
@@ -20,6 +21,7 @@ function App() {
           component={DetailRecipe}
         ></Route>
         <Route exact path="/create" component={CreateRecipe}></Route>
+        <Route exact path="/*" component={Error404}></Route>
       </Switch>
     </div>
   );

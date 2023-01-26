@@ -6,7 +6,12 @@
   color: #f6a454;
   padding: 5px;
   cursor: pointer;
+  font-size: 18px;
 }
 .div {
   margin-left: 3px;
+}
+.option {
+  background-color: #f6a55468;
+  font-size: 18px;
 }

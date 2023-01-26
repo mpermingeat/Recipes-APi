@@ -36,27 +36,16 @@ function Pagination(props) {
         ))}
       </div>
       <div className={styles.cardsContainer}>
-        {paginated?.map((e) =>
-          e.dataBase ? (
-            <Card
-              key={e.id}
-              id={e.id}
-              dataBase={e.dataBase}
-              name={e.title}
-              image="https://via.placeholder.com/150"
-              diets={e.dietTypes.map((e) => e.name)}
-            />
-          ) : (
-            <Card
-              key={e.id}
-              id={e.id}
-              dataBase={false}
-              name={e.title}
-              image={e.image}
-              diets={e.diets}
-            />
-          )
-        )}
+        {paginated?.map((e) => (
+          <Card
+            key={e.id}
+            id={e.id}
+            dataBase={e.dataBase}
+            name={e.title}
+            image={e.image ? e.image : "https://via.placeholder.com/150"}
+            diets={e.dataBase ? e.dietTypes.map((e) => e.name) : e.diets}
+          />
+        ))}
       </div>
     </>
   );

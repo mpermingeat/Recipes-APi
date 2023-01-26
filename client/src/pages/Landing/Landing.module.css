@@ -10,18 +10,20 @@
 }
 
 .h1 {
-  font-size: 60px;
+  font-size: 80px;
   color: #f6a454;
   font-family: "Cinzel-Bold";
+  margin-bottom: 15px;
 }
 
 .button {
   font-family: "Signatie";
   background: none;
-  font-size: 60px;
+  font-size: 80px;
   color: #f6a454;
   border: none;
   transition: all 0.5s ease-in-out;
+  margin-top: 20px;
 }
 .button:hover {
   transform: scale(1.35);
@@ -29,7 +31,7 @@
 }
 .border {
   border: solid #f6a454 3px;
-  height: 95%;
+  height: 100%;
   width: 95%;
-  padding: 100px 0px;
+  padding: 140px 0px;
 }

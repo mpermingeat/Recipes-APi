@@ -3,6 +3,7 @@ const {
   createRecipe,
   getListByName,
   getDetailsById,
+  deleteRecipe,
 } = require("../controllers/recipesControllers");
 
 const recipesRoute = Router();
@@ -38,6 +39,16 @@ recipesRoute.get("/:id/:dataBase", async (req, res) => {
   try {
     const recipeDetails = await getDetailsById(id, dataBase);
     res.status(200).json(recipeDetails);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+});
+
+recipesRoute.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await deleteRecipe(id);
+    res.status(200).send(`Receta con id ${id} eliminado correctamente`);
   } catch (error) {
     res.status(404).json({ error: error.message });
   }

@@ -5,11 +5,10 @@ import styles from "./Pagination.module.css";
 function Pagination(props) {
   const [page, setPage] = useState(1);
   //-------------Traemos las recetas----------------//
-  const recipes = useSelector((state) => state.recipes);
   const filterRecipes = useSelector((state) => state.filterRecipes);
   //-----calculamos las paginas necesarias en base a la cantidad de card----------//
   const amount = 9;
-  const totalPages = Math.ceil(recipes.length / amount);
+  const totalPages = Math.ceil(filterRecipes.length / amount);
   //-----------calculamos cuales son las q se muestran---------//
   const paginated = filterRecipes?.slice((page - 1) * amount, page * amount);
 
@@ -27,7 +26,7 @@ function Pagination(props) {
       <div className={styles.div}>
         {indexButton.map((element) => (
           <button
-            className={styles.button}
+            className={page === element ? styles.pageActual : styles.button}
             onClick={handlePage}
             value={element}
           >

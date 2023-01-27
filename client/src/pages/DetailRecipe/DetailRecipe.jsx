@@ -12,14 +12,14 @@ function DetailRecipe() {
   const { id, dataBase } = useParams();
   const dispatch = useDispatch();
   const { push } = useHistory();
-
+  //---------------obtenemos el detalle de la receta--------------////
   const getRecipe = async (id, dataBase) => {
     const response = await axios
       .get(`http://localhost:3001/recipes/${id}/${dataBase}`)
       .then((res) => setRecipe(res.data));
     return response;
   };
-
+  //------------Manejamos la eliminacion de la receta y redirigimos al user------//////
   const handleDelete = (id) => {
     dispatch(action.deleteRecipe(id));
     dispatch(action.addRecipes(""));
@@ -29,12 +29,12 @@ function DetailRecipe() {
   useEffect((t) => {
     getRecipe(id, dataBase);
   }, []);
-
+  //-----------Funcion para eleminar las etiquetas html que vienen con el texto----////
   const parseoHtml = (text) => {
     const pattern = /<[^>]*>/gi;
     return text?.replace(pattern, "");
   };
-  console.log(recipe);
+
   return (
     <>
       <div className={styles.div}>

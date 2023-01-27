@@ -4,7 +4,7 @@ import styles from "./OrderByScore.module.css";
 function OrderByScore() {
   const dispatch = useDispatch();
   const filterValue = useSelector((state) => state.filterValue);
-  ///----------------funciones para el order----------------//
+  ///----------------funcion para el order Score----------------//
   const handleOrderScore = (event) => {
     dispatch(action.healthScore(event.target.value));
     dispatch(action.setFilterValue("OrderByScore", event.target.value));

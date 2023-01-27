@@ -97,5 +97,20 @@ const getDetailsById = async (idSearch, dataBase) => {
 const deleteRecipe = async (id) => {
   await Recipe.destroy({ where: { id: id } });
 };
+
+const updateRecipe = async (recipe, id) => {
+  const updated = await Recipe.update(recipe, {
+    where: { id: id },
+  });
+  const updateRecipeDiets = await Recipe.findByPk(id);
+  await updateRecipeDiets.setDietTypes(recipe.dietsTypes);
+  return updated;
+};
 //
-module.exports = { createRecipe, getListByName, getDetailsById, deleteRecipe };
+module.exports = {
+  createRecipe,
+  getListByName,
+  getDetailsById,
+  deleteRecipe,
+  updateRecipe,
+};

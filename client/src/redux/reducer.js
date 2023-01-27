@@ -22,16 +22,16 @@ const inicialState = {
 
 export const reducer = (state = inicialState, { type, payload }) => {
   switch (type) {
-    //--------------Agregar recetas al golal-----------------------------//
     case ADD_RECIPES:
+      //--------------Agregar recetas al golal-----------------------------//
       return { ...state, recipes: payload, filterRecipes: payload };
-    //--------------filtrar las recetas por dieta-----------------------------//
     case FILTER_DIETS:
+      //--------------filtrar las recetas-----------------------------//
       //------hashmap donde seteamos los filtros q selecionamos como propiedad en true------//
       const filterSelected = { ...state.selectFilter };
       filterSelected[payload] = true;
 
-      //----definimos un array conm todos los filtros a aplicar----------//
+      //----definimos un array con todos los filtros a aplicar----------//
       const FiltersToApply = Object.keys(filterSelected);
 
       //---variablea auxiliar con resetas-----/
@@ -48,7 +48,7 @@ export const reducer = (state = inicialState, { type, payload }) => {
         filterRecipes: auxRecipes,
         selectFilter: filterSelected,
       };
-    //--------------Ordenar el filtrado ASC DESC-----------------------------//
+    //--------------Ordenar el name ASC DESC-----------------------------//
     case ORDER_FILTER:
       return {
         ...state,

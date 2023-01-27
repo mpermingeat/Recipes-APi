@@ -4,7 +4,7 @@ import styles from "./OrderByName.module.css";
 function OrderByName() {
   const dispatch = useDispatch();
   const filterValue = useSelector((state) => state.filterValue);
-  ///----------------funciones para el order----------------//
+  ///----------------funcion para el order by name----------------//
   const handleOrder = (event) => {
     dispatch(action.orderFilter(event.target.value));
     dispatch(action.setFilterValue("OrderByName", event.target.value));

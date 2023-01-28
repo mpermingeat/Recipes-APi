@@ -3,7 +3,7 @@ const { Recipe, DietTypes } = require("../db");
 const { apiKey } = process.env;
 const { default: axios } = require("axios");
 
-//crear recetas
+//------------------------crear recetas-----------------------------------//
 const createRecipe = async (title, summary, healthScore, steps, dietsTypes) => {
   if (!title || !summary) {
     throw Error("Faltan enviar datos obligatorios");
@@ -19,7 +19,7 @@ const createRecipe = async (title, summary, healthScore, steps, dietsTypes) => {
   return newRecipe;
 };
 
-//traer recetas por nombre, request del search bar
+//------------traer recetas por nombre, request del search bar---------------//
 const getListByName = async (title) => {
   const listByName = await Recipe.findAll({
     where: {
@@ -50,7 +50,7 @@ const getListByName = async (title) => {
   if (allResults.length === 0) throw Error("No existen recetas con ese nombre");
   return allResults;
 };
-//traer por id, para el detail
+//----------------traer por id, para el detail-------------------------------//
 const getDetailsById = async (idSearch, dataBase) => {
   let recipeDetail = {};
 

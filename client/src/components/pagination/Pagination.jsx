@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import styles from "./Pagination.module.css";
-function Pagination(props) {
+function Pagination(s) {
   const [page, setPage] = useState(1);
   //-------------Traemos las recetas----------------//
   const filterRecipes = useSelector((state) => state.filterRecipes);
@@ -24,8 +24,9 @@ function Pagination(props) {
   return (
     <>
       <div className={styles.div}>
-        {indexButton.map((element) => (
+        {indexButton.map((element, index) => (
           <button
+            key={index}
             className={page === element ? styles.pageActual : styles.button}
             onClick={handlePage}
             value={element}

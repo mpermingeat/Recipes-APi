@@ -5,14 +5,17 @@ function MyNavBar() {
   return (
     <div className={styles.div}>
       <Link className={styles.botones} to="/">
-        Log
+        Logo
       </Link>
       <Link className={styles.botones} to="/home">
         Home
       </Link>
       <SearchBar></SearchBar>
       <Link className={styles.botones} to="/create">
-        Create Recipe
+        Create
+      </Link>
+      <Link className={styles.botones} to="/about">
+        About
       </Link>
     </div>
   );

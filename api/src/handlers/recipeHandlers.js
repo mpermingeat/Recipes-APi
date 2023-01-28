@@ -5,7 +5,7 @@ const {
   deleteRecipe,
   updateRecipe,
 } = require("../controllers/recipesControllers");
-
+//----------obtener recetas por nombre-----------//
 const getRecipeHandler = async (req, res) => {
   const { title } = req.query;
   try {
@@ -15,6 +15,7 @@ const getRecipeHandler = async (req, res) => {
     res.status(404).json({ error: error.message });
   }
 };
+//--------------Manejador para el detail-------------------//
 const getDetailHandler = async (req, res) => {
   const { id, dataBase } = req.params;
   try {
@@ -24,7 +25,7 @@ const getDetailHandler = async (req, res) => {
     res.status(404).json({ error: error.message });
   }
 };
-
+//------------Manejador para crear la receta-------------------------//
 const postRecipeHandler = async (req, res) => {
   const { title, summary, healthScore, steps, dietsTypes } = req.body;
   try {
@@ -40,6 +41,7 @@ const postRecipeHandler = async (req, res) => {
     res.status(404).json({ error: error.message });
   }
 };
+//---------------Manejador de eliminar receta-------------------------//
 const deleteRecipeHandler = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,6 +51,7 @@ const deleteRecipeHandler = async (req, res) => {
     res.status(404).json({ error: error.message });
   }
 };
+//--------------Manejador de actualizacion de recetas----------------//
 const updateRecipeHandler = async (req, res) => {
   const { id } = req.params;
   const recipe = req.body;

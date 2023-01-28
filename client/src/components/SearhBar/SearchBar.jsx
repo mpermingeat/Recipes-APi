@@ -22,7 +22,11 @@ function SearchBar() {
         onChange={handleInputSearch}
         value={name}
       />
-      <button className={styles.button} onClick={() => onSearch(name)}>
+      <button
+        name="search"
+        className={styles.button}
+        onClick={() => onSearch(name)}
+      >
         Search
       </button>
     </div>

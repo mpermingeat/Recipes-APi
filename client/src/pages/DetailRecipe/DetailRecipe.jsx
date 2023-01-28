@@ -12,6 +12,7 @@ function DetailRecipe() {
   const { id, dataBase } = useParams();
   const dispatch = useDispatch();
   const { push } = useHistory();
+
   //---------------obtenemos el detalle de la receta--------------////
   const getRecipe = async (id, dataBase) => {
     const response = await axios
@@ -26,7 +27,7 @@ function DetailRecipe() {
     push("/home");
   };
 
-  useEffect((t) => {
+  useEffect(() => {
     getRecipe(id, dataBase);
   }, []);
   //-----------Funcion para eleminar las etiquetas html que vienen con el texto----////
@@ -56,7 +57,6 @@ function DetailRecipe() {
           <div className={styles.tags}>
             {recipe.dataBase
               ? recipe.dietTypes?.map((element) => {
-                  console.log(element);
                   return <span className={styles.span}>{element.name}</span>;
                 })
               : recipe.diets?.map((element) => (

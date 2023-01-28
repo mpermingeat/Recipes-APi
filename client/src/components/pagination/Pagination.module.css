@@ -31,10 +31,22 @@
   color: #25432b;
   border: 1px solid #25432b;
 }
+.button:focus {
+  font-family: "chalkboar like";
+  cursor: pointer;
+  background-color: #f6a55491;
+  color: #25432b;
+  border: 1px solid #25432b;
+}
 
 .pageActual {
   font-family: "chalkboar like";
-
+  padding: 1px 1px;
+  margin: 5px;
+  border-radius: 5px;
+  width: 28px;
+  height: 28px;
+  font-size: 8px;
   background-color: #f6a55491;
   color: #25432b;
   border: 1px solid #25432b;

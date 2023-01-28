@@ -11,8 +11,11 @@ function OrderByName() {
   };
   return (
     <div className={styles.div}>
-      <label htmlFor="">Order by: </label>
+      <label name="orderName" htmlFor="">
+        Order by:
+      </label>
       <select
+        name="orderName"
         className={styles.select}
         onChange={handleOrder}
         value={filterValue.OrderByName ? filterValue.OrderByName : ""}

@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
   background-image: url("../../assets/img/background-03.png");
   font-family: "Cinzel-Bold";
   color: #f6a454;

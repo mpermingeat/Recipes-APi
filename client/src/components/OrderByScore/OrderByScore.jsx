@@ -11,8 +11,11 @@ function OrderByScore() {
   };
   return (
     <div className={styles.div}>
-      <label htmlFor="">Order by HealthScore:</label>
+      <label name="orderScore" htmlFor="">
+        Order by HealthScore:
+      </label>
       <select
+        name="orderScore"
         className={styles.elements}
         onChange={handleOrderScore}
         value={filterValue.OrderByScore ? filterValue.OrderByScore : ""}

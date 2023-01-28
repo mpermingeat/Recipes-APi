@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Form.module.css";
 import Validation from "./validation";
+import * as action from "../../redux/actions";
 const { default: axios } = require("axios");
 
 function Form() {
+  const dispatch = useDispatch();
   const [dataForm, setDataForm] = useState({
     title: "",
     summary: "",
@@ -30,6 +32,7 @@ function Form() {
         steps: "",
         dietsTypes: [],
       });
+      dispatch(action.addRecipes(""));
     } else {
       alert("Datos incorrectos");
     }

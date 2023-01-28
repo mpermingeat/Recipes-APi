@@ -23,7 +23,7 @@ function Form() {
     if (!err.length) {
       axios
         .post("http://localhost:3001/recipes", dataForm)
-        .then((res) => alert("todo bien"))
+        .then((res) => console.log("todo bien"))
         .catch((error) => console.log(error.message));
       setDataForm({
         title: "",
@@ -54,6 +54,7 @@ function Form() {
         : dataForm.dietsTypes.filter((ele) => ele !== e.target.name),
     });
   };
+
   return (
     <div className={styles.card}>
       <form className={styles.form} action="" method="post">

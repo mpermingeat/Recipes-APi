@@ -4,7 +4,14 @@ const { apiKey } = process.env;
 const { default: axios } = require("axios");
 
 //------------------------crear recetas-----------------------------------//
-const createRecipe = async (title, summary, healthScore, steps, dietsTypes) => {
+const createRecipe = async (
+  title,
+  summary,
+  healthScore,
+  steps,
+  dietsTypes,
+  dishTypes
+) => {
   if (!title || !summary) {
     throw Error("Faltan enviar datos obligatorios");
   }
@@ -13,6 +20,7 @@ const createRecipe = async (title, summary, healthScore, steps, dietsTypes) => {
     summary,
     healthScore,
     steps,
+    dishTypes,
   });
   if (dietsTypes.length === 0) throw Error("Faltan los tipos de dietas");
   newRecipe.setDietTypes(dietsTypes);

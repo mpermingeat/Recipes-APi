@@ -12,7 +12,7 @@ const getRecipeHandler = async (req, res) => {
     const listsRecipes = await getListByName(title);
     res.status(200).json(listsRecipes);
   } catch (error) {
-    res.status(404).json({ error: error.message });
+    res.status(400).json({ error: error.message });
   }
 };
 //--------------Manejador para el detail-------------------//
@@ -27,14 +27,16 @@ const getDetailHandler = async (req, res) => {
 };
 //------------Manejador para crear la receta-------------------------//
 const postRecipeHandler = async (req, res) => {
-  const { title, summary, healthScore, steps, dietsTypes } = req.body;
+  const { title, summary, healthScore, steps, dietsTypes, dishTypes } =
+    req.body;
   try {
     const newRecipe = await createRecipe(
       title,
       summary,
       healthScore,
       steps,
-      dietsTypes
+      dietsTypes,
+      dishTypes
     );
     res.status(200).json(newRecipe);
   } catch (error) {

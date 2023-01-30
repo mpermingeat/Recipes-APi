@@ -15,16 +15,26 @@ module.exports = (sequelize) => {
       title: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
       },
       summary: {
         type: DataTypes.TEXT,
         allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
       },
       healthScore: {
         type: DataTypes.INTEGER,
+        allowNull: false,
       },
       steps: {
         type: DataTypes.TEXT,
+      },
+      dishTypes: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
       },
       dataBase: {
         type: DataTypes.BOOLEAN,

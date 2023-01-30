@@ -1,39 +1,27 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./Form.module.css";
-import Validation from "./validation";
+import styles from "./EditRecipe.module.css";
+import Validation from "../../components/Form/validation";
 import * as action from "../../redux/actions";
 const { default: axios } = require("axios");
 
-function Form() {
+function EditRecipe() {
   const dispatch = useDispatch();
-  const [dataForm, setDataForm] = useState({
-    title: "",
-    summary: "",
-    healthScore: 0,
-    steps: "",
-    dietsTypes: [],
-    dishTypes: [],
-  });
+
+  const [dataForm, setDataForm] = useState();
   const [errors, setErrors] = useState({});
   const diets = useSelector((state) => state.diets);
+
   //-------------- Manejador del submit del formulario-------------------//
   const handleSubmit = (event) => {
     event.preventDefault();
     let err = Object.values(errors);
     if (!err.length) {
       axios
-        .post("http://localhost:3001/recipes", dataForm)
+        .put("http://localhost:3001/recipes", dataForm)
         .then((res) => console.log("todo bien"))
         .catch((error) => console.log(error.message));
-      setDataForm({
-        title: "",
-        summary: "",
-        healthScore: 0,
-        steps: "",
-        dietsTypes: [],
-        dishTypes: [],
-      });
+
       dispatch(action.addRecipes(""));
     } else {
       alert("Datos incorrectos");
@@ -59,7 +47,6 @@ function Form() {
   const handleDish = (e) => {
     setDataForm({ ...dataForm, dishTypes: e.target.value.split(",") });
   };
-
   return (
     <div className={styles.card}>
       <form className={styles.form} action="" method="post">
@@ -168,4 +155,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default EditRecipe;

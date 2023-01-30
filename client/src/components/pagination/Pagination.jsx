@@ -6,6 +6,7 @@ function Pagination(s) {
   const [page, setPage] = useState(1);
   //-------------Traemos las recetas----------------//
   const filterRecipes = useSelector((state) => state.filterRecipes);
+  const selectFilters = useSelector((state) => Object.keys(state.selectFilter));
   //-----calculamos las paginas necesarias en base a la cantidad de card----------//
   const amount = 9;
   const totalPages = Math.ceil(filterRecipes.length / amount);
@@ -36,16 +37,20 @@ function Pagination(s) {
         ))}
       </div>
       <div className={styles.cardsContainer}>
-        {paginated?.map((e) => (
-          <Card
-            key={e.id}
-            id={e.id}
-            dataBase={e.dataBase}
-            name={e.title}
-            image={e.image ? e.image : "https://via.placeholder.com/150"}
-            diets={e.dataBase ? e.dietTypes.map((e) => e.name) : e.diets}
-          />
-        ))}
+        {!filterRecipes.length && !selectFilters.length ? (
+          <span className={styles.loader}></span>
+        ) : (
+          paginated?.map((e) => (
+            <Card
+              key={e.id}
+              id={e.id}
+              dataBase={e.dataBase}
+              name={e.title}
+              image={e.image ? e.image : "https://via.placeholder.com/150"}
+              diets={e.dataBase ? e.dietTypes.map((e) => e.name) : e.diets}
+            />
+          ))
+        )}
       </div>
     </>
   );

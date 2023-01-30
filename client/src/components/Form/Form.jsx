@@ -10,7 +10,7 @@ function Form() {
   const [dataForm, setDataForm] = useState({
     title: "",
     summary: "",
-    healthScore: 0,
+    healthScore: null,
     steps: "",
     dietsTypes: [],
     dishTypes: [],
@@ -29,12 +29,11 @@ function Form() {
       setDataForm({
         title: "",
         summary: "",
-        healthScore: 0,
+        healthScore: null,
         steps: "",
         dietsTypes: [],
         dishTypes: [],
       });
-      dispatch(action.addRecipes(""));
     } else {
       alert("Datos incorrectos");
     }

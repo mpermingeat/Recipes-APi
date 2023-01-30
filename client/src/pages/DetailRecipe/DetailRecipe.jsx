@@ -23,7 +23,6 @@ function DetailRecipe() {
   //------------Manejamos la eliminacion de la receta y redirigimos al user------//////
   const handleDelete = (id) => {
     dispatch(action.deleteRecipe(id));
-    dispatch(action.addRecipes(""));
     push("/home");
   };
 

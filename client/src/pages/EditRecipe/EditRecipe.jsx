@@ -5,10 +5,10 @@ import Validation from "../../components/Form/validation";
 import * as action from "../../redux/actions";
 const { default: axios } = require("axios");
 
-function EditRecipe() {
+function EditRecipe(props) {
   const dispatch = useDispatch();
-
-  const [dataForm, setDataForm] = useState();
+  const { recipe, id, toggleModal } = props;
+  const [dataForm, setDataForm] = useState(recipe);
   const [errors, setErrors] = useState({});
   const diets = useSelector((state) => state.diets);
 
@@ -16,13 +16,14 @@ function EditRecipe() {
   const handleSubmit = (event) => {
     event.preventDefault();
     let err = Object.values(errors);
+    dataForm.dietTypes = dataForm.dietTypes.map((elem) => elem.id);
     if (!err.length) {
       axios
-        .put("http://localhost:3001/recipes", dataForm)
+        .put(`http://localhost:3001/recipes/${id}`, dataForm)
         .then((res) => console.log("todo bien"))
         .catch((error) => console.log(error.message));
-
       dispatch(action.addRecipes(""));
+      toggleModal();
     } else {
       alert("Datos incorrectos");
     }
@@ -35,18 +36,21 @@ function EditRecipe() {
     setErrors(Validation({ ...dataForm, [property]: value }));
   };
   //-----------------Manejador de input de las dietas----------------------///
-  const handleDiets = (e) => {
-    const findType = dataForm.dietsTypes.find((elem) => elem === e.target.name);
+  const handleDiets = (name, id) => {
+    console.log(dataForm.dietTypes);
+    const findType = dataForm.dietTypes?.find((elem) => elem.id === id);
     setDataForm({
       ...dataForm,
-      dietsTypes: !findType
-        ? [...dataForm.dietsTypes, e.target.name]
-        : dataForm.dietsTypes.filter((ele) => ele !== e.target.name),
+      dietTypes: !findType
+        ? [...dataForm.dietTypes, { id, name }]
+        : dataForm.dietTypes.filter((ele) => ele.id !== id),
     });
   };
   const handleDish = (e) => {
     setDataForm({ ...dataForm, dishTypes: e.target.value.split(",") });
   };
+
+  ///////////////////////////////////////////////////////////////////////////////////////
   return (
     <div className={styles.card}>
       <form className={styles.form} action="" method="post">
@@ -100,7 +104,7 @@ function EditRecipe() {
         )}
         <div className={styles.div}>
           <label className={styles.label} htmlFor="steps">
-            Steps:{" "}
+            Steps:
           </label>
           <textarea
             className={styles.textarea}
@@ -113,6 +117,7 @@ function EditRecipe() {
         {errors.steps ? <p className={styles.p}>{errors.steps}</p> : ""}
         <div className={styles.divDiets}>
           {diets.map((diet) => {
+            console.log(diet);
             return (
               <>
                 <label className={styles.label} key={diet.name}>
@@ -120,9 +125,10 @@ function EditRecipe() {
                 </label>
                 <input
                   type="checkbox"
-                  name={diet.id}
+                  name={diet.name}
                   key={diet.id}
-                  onChange={handleDiets}
+                  checked={dataForm.dietTypes.some((obj) => obj.id === diet.id)}
+                  onChange={() => handleDiets(diet.name, diet.id)}
                 />
               </>
             );
@@ -133,7 +139,7 @@ function EditRecipe() {
             Dish types:
           </label>
           <input
-            className={styles.textarea}
+            className={styles.input}
             id="dishTypes"
             name="dishTypes"
             value={dataForm.dishTypes.join()}

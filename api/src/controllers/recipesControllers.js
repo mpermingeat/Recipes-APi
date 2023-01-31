@@ -45,7 +45,7 @@ const getListByName = async (title) => {
     ],
   });
   const getListApi = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=10&addRecipeInformation=true`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=40&addRecipeInformation=true`
   );
   let listApi = getListApi.data.results;
   if (listApi.length !== 0) {
@@ -111,7 +111,7 @@ const updateRecipe = async (recipe, id) => {
     where: { id: id },
   });
   const updateRecipeDiets = await Recipe.findByPk(id);
-  await updateRecipeDiets.setDietTypes(recipe.dietsTypes);
+  await updateRecipeDiets.setDietTypes(recipe.dietTypes);
   return updated;
 };
 //

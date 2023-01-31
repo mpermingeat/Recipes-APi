@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import * as action from "../../redux/actions";
+import EditRecipe from "../EditRecipe/EditRecipe";
 import styles from "./DetailRecipe.module.css";
 const { default: axios } = require("axios");
 
@@ -12,6 +13,7 @@ function DetailRecipe() {
   const { id, dataBase } = useParams();
   const dispatch = useDispatch();
   const { push } = useHistory();
+  const [modal, setModal] = useState(false);
 
   //---------------obtenemos el detalle de la receta--------------////
   const getRecipe = async (id, dataBase) => {
@@ -34,11 +36,19 @@ function DetailRecipe() {
     const pattern = /<[^>]*>/gi;
     return text?.replace(pattern, "");
   };
+
+  const toggleModal = () => {
+    return setModal(!modal);
+  };
+
   const auxFlag = Object.keys(recipe);
 
   return (
     <>
       <div className={styles.div}>
+        {!!modal && (
+          <EditRecipe recipe={recipe} id={id} toggleModal={toggleModal} />
+        )}
         {!auxFlag.length ? (
           <span className={styles.loader}></span>
         ) : (
@@ -93,7 +103,12 @@ function DetailRecipe() {
 
             {recipe.dataBase ? (
               <div className={styles.divButtons}>
-                <button className={styles.buttons} onClick={() => {}}>
+                <button
+                  className={styles.buttons}
+                  onClick={() => {
+                    toggleModal();
+                  }}
+                >
                   Edit
                 </button>
                 <button

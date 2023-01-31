@@ -16,7 +16,7 @@ function Home() {
   //--------Agregar las dietas al estado global---------------//
   useEffect(() => {
     dispatch(action.addDiets());
-    dispatch(action.addRecipes(""));
+    !recipes.length && dispatch(action.addRecipes(""));
   }, []);
 
   ///-------------------HTML--------------------------------//

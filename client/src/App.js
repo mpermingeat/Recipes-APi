@@ -4,7 +4,6 @@ import MyNavBar from "./components/MyNavBar/MyNavBar";
 import About from "./pages/About/About";
 import CreateRecipe from "./pages/CreateRecipe/CreateRecipe";
 import DetailRecipe from "./pages/DetailRecipe/DetailRecipe";
-import EditRecipe from "./pages/EditRecipe/EditRecipe";
 import Error404 from "./pages/Error404/Error404";
 import Home from "./pages/Home/Home";
 import Landing from "./pages/Landing/Landing";

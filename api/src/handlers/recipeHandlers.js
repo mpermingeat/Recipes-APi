@@ -38,7 +38,7 @@ const postRecipeHandler = async (req, res) => {
       dietsTypes,
       dishTypes
     );
-    res.status(200).json(newRecipe);
+    res.status(200).send("Receta creada correctamente");
   } catch (error) {
     res.status(404).json({ error: error.message });
   }

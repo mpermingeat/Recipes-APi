@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./Form.module.css";
 import Validation from "./validation";
 import * as action from "../../redux/actions";
-const { default: axios } = require("axios");
 
-function Form() {
+function Form(props) {
   const dispatch = useDispatch();
   const [dataForm, setDataForm] = useState({
     title: "",
@@ -17,27 +16,21 @@ function Form() {
   });
   const [errors, setErrors] = useState({});
   const diets = useSelector((state) => state.diets);
-  //-------------- Manejador del submit del formulario-------------------//
-  const handleSubmit = (event) => {
+  //
+  const hanbleSubmit = async (event) => {
     event.preventDefault();
-    let err = Object.values(errors);
-    if (!err.length) {
-      axios
-        .post("http://localhost:3001/recipes", dataForm)
-        .then((res) => console.log("todo bien"))
-        .catch((error) => console.log(error.message));
-      setDataForm({
-        title: "",
-        summary: "",
-        healthScore: null,
-        steps: "",
-        dietsTypes: [],
-        dishTypes: [],
-      });
-    } else {
-      alert("Datos incorrectos");
-    }
+    await props.handleCreate(errors, dataForm);
+    setDataForm({
+      title: "",
+      summary: "",
+      healthScore: null,
+      steps: "",
+      dietsTypes: [],
+      dishTypes: [],
+    });
+    dispatch(action.addRecipes(""));
   };
+
   //------------- Manejador de los inputs para validar y setear errores----------//
   const hanbleInputChange = (event) => {
     let property = event.target.name;
@@ -157,7 +150,7 @@ function Form() {
             className={styles.submit}
             type="submit"
             value="Enviar"
-            onClick={handleSubmit}
+            onClick={hanbleSubmit}
           >
             Enviar
           </button>

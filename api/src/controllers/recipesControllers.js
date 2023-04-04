@@ -23,7 +23,9 @@ const createRecipe = async (
     dishTypes,
   });
   if (dietsTypes.length === 0) throw Error("Faltan los tipos de dietas");
-  newRecipe.setDietTypes(dietsTypes);
+  newRecipe.setDietTypes(dietsTypes, {
+    through: { unitPrice: 0, quantity: 0 },
+  });
   return newRecipe;
 };
 

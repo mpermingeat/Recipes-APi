@@ -57,7 +57,7 @@ const deleteRecipeHandler = async (req, res) => {
 const updateRecipeHandler = async (req, res) => {
   const { id } = req.params;
   const recipe = req.body;
-  console.log(recipe);
+
   try {
     const updated = await updateRecipe(recipe, id);
     res.status(200).send(updated);

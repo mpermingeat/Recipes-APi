@@ -117,7 +117,6 @@ function EditRecipe(props) {
         {errors.steps ? <p className={styles.p}>{errors.steps}</p> : ""}
         <div className={styles.divDiets}>
           {diets.map((diet) => {
-            console.log(diet);
             return (
               <>
                 <label className={styles.label} key={diet.name}>
